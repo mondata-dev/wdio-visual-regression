@@ -52,8 +52,8 @@ export class VisualRegression {
   }
 
   // Cucumber
-  afterScenario(_uri: string, _feature: any, scenario: any, result: any) {
-    this.addContextToReport({ testName: scenario.name, passed: result.status === 'passed' });
+  afterScenario(world: any, result: any, context: any)) {
+    this.addContextToReport({ testName: context.scenario, passed: result.status === 'passed' });
   }
 
   after() {

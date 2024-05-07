@@ -7,7 +7,8 @@ export async function match(filename: string, takeScreenshot: () => Promise<Buff
   const config = Config.get();
   const actualImage = await takeScreenshot();
   let expectedImage = getImage(filename, Subfolder.EXPECTED);
-  
+  console.log("!!!!!!!!!!!!!!!!!!!!9991" + filename);
+  console.log(config);
   saveImage(filename, Subfolder.ACTUAL, actualImage);
 
   if (!expectedImage) {

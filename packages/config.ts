@@ -30,6 +30,7 @@ export class Config {
 
   get instanceDir(): string {
     const instanceFolder = this.options.instanceFolder ?? '';
+    console.log("!!!!!!!!!!!!!!!!!!!!1" + join(this.outputDir, instanceFolder));
     return join(this.outputDir, instanceFolder);
   }
 

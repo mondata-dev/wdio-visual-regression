@@ -25,6 +25,7 @@ class Config {
     get instanceDir() {
         var _a;
         const instanceFolder = (_a = this.options.instanceFolder) !== null && _a !== void 0 ? _a : '';
+        console.log("!!!!!!!!!!!!!!!!!!!!1" + path_1.join(this.outputDir, instanceFolder));
         return path_1.join(this.outputDir, instanceFolder);
     }
     get customMatchers() {

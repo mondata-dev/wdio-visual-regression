@@ -20,6 +20,8 @@ function match(filename, takeScreenshot) {
         const config = internal_1.Config.get();
         const actualImage = yield takeScreenshot();
         let expectedImage = internal_1.getImage(filename, internal_1.Subfolder.EXPECTED);
+        console.log("!!!!!!!!!!!!!!!!!!!!9991" + filename);
+        console.log(config);
         internal_1.saveImage(filename, internal_1.Subfolder.ACTUAL, actualImage);
         if (!expectedImage) {
             if (config.initiateExpectedImage) {

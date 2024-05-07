@@ -20,9 +20,15 @@ function match(filename, takeScreenshot) {
         const config = internal_1.Config.get();
         const actualImage = yield takeScreenshot();
         let expectedImage = internal_1.getImage(filename, internal_1.Subfolder.EXPECTED);
+        internal_1.saveImage(filename, internal_1.Subfolder.ACTUAL, actualImage);
         if (!expectedImage) {
-            internal_1.saveImage(filename, internal_1.Subfolder.EXPECTED, actualImage);
-            expectedImage = actualImage;
+            if (config.initiateExpectedImage) {
+                internal_1.saveImage(filename, internal_1.Subfolder.EXPECTED, actualImage);
+                expectedImage = actualImage;
+            }
+            else {
+                return Number.POSITIVE_INFINITY;
+            }
         }
         const result = yield compareImages_1.default(expectedImage, actualImage, { output: config.ressembleOutput });
         const data = result.getBuffer();
@@ -33,7 +39,6 @@ function match(filename, takeScreenshot) {
         else {
             mismatch = 0;
         }
-        internal_1.saveImage(filename, internal_1.Subfolder.ACTUAL, actualImage);
         return mismatch;
     });
 }

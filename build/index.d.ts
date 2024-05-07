@@ -13,3 +13,6 @@ declare module '@wdio/sync' {
 }
 
 export {};
+
+
+export { VisualRegression, defineMatcher, Matcher } from './internal';

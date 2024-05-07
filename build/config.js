@@ -7,6 +7,7 @@ const DEFAULT_FOLDER = 'regression';
 const DEFAULT_MATCHERS = [internal_1.ViewportMatcher, internal_1.ElementMatcher];
 const DEFAULT_ALLOWED_MISMATCH = 0.1;
 const LARGE_IMAGE_THRESHOLD = 1200;
+const DEFAULT_INITIATE_EXPECTED_IMAGE = true;
 var Subfolder;
 (function (Subfolder) {
     Subfolder["ACTUAL"] = "actual";
@@ -42,6 +43,10 @@ class Config {
         return {
             largeImageThreshold: (_a = this.options.largeImageThreshold) !== null && _a !== void 0 ? _a : LARGE_IMAGE_THRESHOLD
         };
+    }
+    get initiateExpectedImage() {
+        var _a;
+        return (_a = this.options.initiateExpectedImage) !== null && _a !== void 0 ? _a : DEFAULT_INITIATE_EXPECTED_IMAGE;
     }
     static get() {
         if (!Config.instance) {

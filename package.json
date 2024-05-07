@@ -28,8 +28,8 @@
   "author": "ennjin",
   "license": "MIT",
   "dependencies": {
-    "canvas": "^2.6.1",
-    "resemblejs": "^3.2.4"
+    "canvas": "^2.11.2",
+    "resemblejs": "^5.0.0"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",
